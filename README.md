@@ -38,7 +38,8 @@ Creating n-dimension filters of the same size than a provided array. Arguments a
 * "Triangle", Lineaire filter, parameters can be passed to change the value at the edge of the filter (otherwise = 0)
 * "Hanning", n-dim Hanning,
 * "Blackman", n-dim Blackman
-* "Pcos", Cosinus sum filter with given parameter : $p_i -0.5cos(pi*(x-1)/N)+(0.5-p_i)cos(2pi(x-1)/N)$ where N is the size of the i dimension in which this is being applied.
+* "Pcos", Cosinus sum filter with given parameter : ```math p_i -0.5cos(pi*(x-1)/N)+(0.5-p_i)cos(2pi(x-1)/N)```
+$$p_i -0.5cos(pi*(x-1)/N)+(0.5-p_i)cos(2pi(x-1)/N)$$ where N is the size of the i dimension in which this is being applied.
 
 ## MeanFilter(::String, ::Array, ::Array, [::Array])
 
