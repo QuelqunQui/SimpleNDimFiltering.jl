@@ -7,7 +7,7 @@
 [![codecov.io](http://codecov.io/github/QuelqunQui/SimpleNDimFiltering.jl/coverage.svg?branch=master)](http://codecov.io/github/QuelqunQui/SimpleNDimFiltering.jl?branch=master)
 
 ## ColArray(::Int64,::Int64,::Any)
-The purpose of this function is to vectorize ::Colon, and replace one with something else, like a range. To allow to work on a n-1 dimension Array from a n-dimension Array.  Arguments are the wanted length, the position of the non Colon element and the value put in that position.
+The purpose of this function is to vectorize `::Colon`, and replace one with something else, like a range. To allow to work on a n-1 dimension Array from a n-dimension Array.  Arguments are the wanted length, the position of the non `Colon` element and the value put in that position.
 ```julia
 X=ones(4,4,4) # you want one slice of the cube of ones
 NDims=length(size(X))
@@ -38,8 +38,7 @@ Creating n-dimension filters of the same size than a provided array. Arguments a
 * "Triangle", Lineaire filter, parameters can be passed to change the value at the edge of the filter (otherwise = 0)
 * "Hanning", n-dim Hanning,
 * "Blackman", n-dim Blackman
-* "Pcos", Cosinus sum filter with given parameter : ```math p_i -0.5cos(pi*(x-1)/N)+(0.5-p_i)cos(2pi(x-1)/N)```
-$$p_i -0.5cos(pi*(x-1)/N)+(0.5-p_i)cos(2pi(x-1)/N)$$ where N is the size of the i dimension in which this is being applied.
+* "Pcos", Cosinus sum filter with given parameter : $`p_i -0.5cos( \pi *(x-1)/N)+(0.5-p_i)cos(2 \pi (x-1)/N)`$ where N is the size of the i dimension in which this is being applied.
 
 ## MeanFilter(::String, ::Array, ::Array, [::Array])
 
