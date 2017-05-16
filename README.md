@@ -8,25 +8,25 @@
 
 ## ColArray(::Int64,::Int64,::Any)
 The purpose of this function is to vectorize ::Colon, and replace one with something else, like a range. To allow to work on a n-1 dimension Array from a n-dimension Array.  Arguments are the wanted length, the position of the non Colon element and the value put in that position.
-'''julia
+```julia
 X=ones(4,4,4) # you want one slice of the cube of ones
 NDims=length(size(X))
 X[1,:,:]==X[ColArray(NDims,1,1)...]
 X[:,4,:]==X[ColArray(NDims,2,4)...]
 X[:,:,1]==X[ColArray(NDims,3,1)...]
 X[:,:,1:2]==X[ColArray(NDims,3,1:2)]
-'''
+```
 Which is usefull to standirdize some function towards n-dimension.
 
 ## GettingIndex(::Array{Any})
 
 Purpose is to get the indexes of the elements of an n-dim Array in a Matrix (n x #elmts) with a centered origin.
-'''julia
+```julia
 X=ones(6,4,8)
 GettingIndex(X)==[1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3 1 2 3;
                   1 1 1 2 2 2 1 1 1 2 2 2 1 1 1 2 2 2 1 1 1 2 2 2;
                   1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 4 4 4 4 4 4]
-'''
+```
 ## NewLowFilter(::String,::Array,[::Array])
 
 Creating n-dimension filters of the same size than a provided array. Arguments are the type of filter asked and a provided Array, if wanted somme parameters can be added, otherwize those are set to 1.
@@ -52,7 +52,7 @@ Arguments are the type of mean wanted, the array on which the filter as to be ap
 * "Triangle", all elements in the range asked are taken but are weighted so that the further they are from the centre elements the less they weight.
 
 ### Examples
-'''julia
+```julia
 X=[0 0 0 0 0;
    0 0 0 0 0;
    0 0 1 0 0;
@@ -75,7 +75,7 @@ MeanFilter("Triangle",X,[3,3])==[0   0   0   0   0;
                                  0 1/8  1/6 1/8  0;
                                  0 1/12 1/8 1/12 0;
                                  0   0   0   0   0]
-'''
+```
 ## FilterS1(::Array,::Array,[::Int64])
 
 Arguments are a 2-D array to filter, a 2-D array containing associated noise and optionnaly a parameter to determine the amount of elements eliminated by a last step described below.
