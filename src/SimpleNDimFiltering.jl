@@ -1,6 +1,6 @@
 __precompile__()
 
-module SplNDimsFiltering
+module SimpleNDimFiltering
 ############################################################################
 # Col Array ceates a vector of type Colon where one of the elements is
 # replaced by another value typically a Range type but not mandatory
